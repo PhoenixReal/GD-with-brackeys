@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://dtvgtfayae6jf"]
+[gd_scene load_steps=10 format=4 uid="uid://dtvgtfayae6jf"]
 
 [ext_resource type="PackedScene" uid="uid://cu78giyngxjdc" path="res://Scences/player.tscn" id="1_q0hna"]
 [ext_resource type="Texture2D" uid="uid://c0wsfs02hsjiq" path="res://Assets/sprites/world_tileset.png" id="2_yv1lj"]
 [ext_resource type="PackedScene" uid="uid://cimr0pyj334pw" path="res://Scences/platfrom.tscn" id="3_veo8t"]
+[ext_resource type="PackedScene" uid="uid://oqotsucn670a" path="res://Scences/coin.tscn" id="4_m6esx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2sjql"]
 texture = ExtResource("2_yv1lj")
@@ -168,6 +169,21 @@ texture = ExtResource("2_yv1lj")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2sjql")
 
+[sub_resource type="Animation" id="Animation_sqgvl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 76)]
+}
+
 [sub_resource type="Animation" id="Animation_gwys7"]
 resource_name = "move"
 length = 1.5
@@ -183,21 +199,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(320, 76), Vector2(400, 76)]
-}
-
-[sub_resource type="Animation" id="Animation_sqgvl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(320, 76)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ek5aa"]
@@ -231,3 +232,21 @@ libraries = {
 "": SubResource("AnimationLibrary_ek5aa")
 }
 autoplay = "move"
+
+[node name="Coin" parent="." instance=ExtResource("4_m6esx")]
+position = Vector2(39, -9)
+
+[node name="Coin2" parent="." instance=ExtResource("4_m6esx")]
+position = Vector2(120, -86)
+
+[node name="Coin3" parent="." instance=ExtResource("4_m6esx")]
+position = Vector2(177, -71)
+
+[node name="Coin4" parent="." instance=ExtResource("4_m6esx")]
+position = Vector2(49, -58)
+
+[node name="Coin5" parent="." instance=ExtResource("4_m6esx")]
+position = Vector2(216, 27)
+
+[node name="Coin6" parent="." instance=ExtResource("4_m6esx")]
+position = Vector2(319, 64)
