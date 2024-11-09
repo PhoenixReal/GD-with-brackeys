@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://dtvgtfayae6jf"]
+[gd_scene load_steps=16 format=4 uid="uid://dtvgtfayae6jf"]
 
 [ext_resource type="PackedScene" uid="uid://cu78giyngxjdc" path="res://Scences/player.tscn" id="1_q0hna"]
 [ext_resource type="Texture2D" uid="uid://c0wsfs02hsjiq" path="res://Assets/sprites/world_tileset.png" id="2_yv1lj"]
+[ext_resource type="FontFile" uid="uid://bn42y1uej8tu6" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="3_c4he5"]
 [ext_resource type="PackedScene" uid="uid://cimr0pyj334pw" path="res://Scences/platfrom.tscn" id="3_veo8t"]
 [ext_resource type="PackedScene" uid="uid://oqotsucn670a" path="res://Scences/coin.tscn" id="4_m6esx"]
 [ext_resource type="PackedScene" uid="uid://uxv3n3cfkx3h" path="res://Scences/kill_zone.tscn" id="5_fmp7w"]
@@ -383,6 +384,40 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = -134.0
+offset_top = -52.0
+offset_right = 30.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_c4he5")
+theme_override_font_sizes/font_size = 8
+text = "Press Spacebar to jump"
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 176.0
+offset_top = -16.0
+offset_right = 244.0
+offset_bottom = -4.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_c4he5")
+theme_override_font_sizes/font_size = 8
+text = "Watch out
+"
+
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 335.0
+offset_top = 13.0
+offset_right = 393.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_c4he5")
+theme_override_font_sizes/font_size = 8
+text = "Careful
+"
+
 [node name="Player" parent="." instance=ExtResource("1_q0hna")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -391,6 +426,10 @@ zoom = Vector2(4, 4)
 limit_bottom = 100
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="Label" type="Label" parent="Player"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="KillZone" parent="." instance=ExtResource("5_fmp7w")]
 
